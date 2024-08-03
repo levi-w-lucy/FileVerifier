@@ -24,6 +24,8 @@ namespace FileVerifier
         public MainWindow()
         {
             InitializeComponent();
+            sdCardFolder = String.Empty;
+            hardDriveFolder = String.Empty;
         }
 
         private void SDFolderSelector_Click(object sender, RoutedEventArgs e)
@@ -33,8 +35,7 @@ namespace FileVerifier
                 Multiselect = false,
                 Title = "Select SD Card Folder"
             };
-            var folderName = GetFolderDetails(ofd, SDFolderLbl, SDCountTb);
-            sdCardFolder = folderName;
+            sdCardFolder = GetFolderDetails(ofd, SDFolderLbl, SDCountTb);
         }
 
         private void HDFolderSelector_Click(object sender, RoutedEventArgs e)
@@ -44,8 +45,7 @@ namespace FileVerifier
                 Multiselect = false,
                 Title = "Select Hard Drive Folder"
             };
-            var folderName = GetFolderDetails(ofd, HDFolderLbl, HDCountTb);
-            hardDriveFolder = folderName;
+            hardDriveFolder = GetFolderDetails(ofd, HDFolderLbl, HDCountTb);
         }
 
         private void CompareBtn_Click(object sender, RoutedEventArgs e)
